@@ -1,0 +1,198 @@
+{
+  "name": "Withdraw",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "wpDFy",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "21",
+      "iffalse": "2",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Withdraw.amount",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "cash",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "bank.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "bank",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "Withdraw.amount",
+      "comparison": "3",
+      "value": "tempVars(\"bank\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Withdraw.amount",
+      "comparison": "4",
+      "value": "-1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "22",
+      "name": "Check Variable"
+    },
+    {
+      "call": "9",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"Withdraw.amount\")}",
+      "storage": "1",
+      "varName2": "amount.withdrew.converted",
+      "name": "Convert a Variable"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"cash\")}",
+      "storage": "1",
+      "varName2": "cash.converted",
+      "name": "Convert a Variable"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"bank\")}",
+      "storage": "1",
+      "varName2": "bank.converted",
+      "name": "Convert a Variable"
+    },
+    {
+      "FirstNumber": "${tempVars(\"amount.withdrew.converted\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"cash.converted\")}",
+      "storage": "1",
+      "varName": "new.cash",
+      "name": "Basic Math Operation"
+    },
+    {
+      "FirstNumber": "${tempVars(\"bank.converted\")}",
+      "info": "1",
+      "SecondNumber": "${tempVars(\"amount.withdrew.converted\")}",
+      "storage": "1",
+      "varName": "new.bank.value",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "bank.system",
+      "changeType": "0",
+      "value": "tempVars(\"new.bank.value\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "0",
+      "value": "tempVars(\"new.cash\")",
+      "name": "Control Member Data"
+    },
+    {
+      "title": "${member}",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "depost.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "depost.embed",
+      "message": "✅ Withdrew ${tempVars(\"Withdraw.amount\")} from your bank!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "depost.embed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Error",
+      "color": "#80ff80",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "ERROR",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "error.message",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "error.message",
+      "message": "Please insert an amount to withdraw, and please remember you need to keep at least 1$ in your bank to keep it!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "error.message",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "_aliases": [
+    "With"
+  ]
+}
