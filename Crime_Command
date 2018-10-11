@@ -1,0 +1,193 @@
+{
+  "name": "Crime",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "mEUgy",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "positive.negative",
+      "min": "1",
+      "max": "3",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "positive.negative",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "2",
+      "iftrueVal": "15",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Negative",
+      "color": "#00ff80",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "crime.money.negative",
+      "min": "-243",
+      "max": "-1342",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "crime.randomized.message.failed",
+      "min": "0",
+      "max": "5",
+      "name": "Generate Random Number"
+    },
+    {
+      "filename": "C:\\Users\\linds\\Desktop\\New_!\\Auto_Responses\\work_responses.json",
+      "storage": "1",
+      "varName2": "read_file_json",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "read_file_json",
+      "path": "['Crime Negative Randomized Messages'][${tempVars(\"crime.randomized.message.failed\")}]",
+      "storage": "1",
+      "varName": "message",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "text": "${tempVars(\"message\")}",
+      "text2": "crime.money.negative",
+      "text3": "💲${tempVars(\"crime.money.negative\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "crime.message.failed.complete",
+      "name": "Replace Text"
+    },
+    {
+      "title": "You were a criminal all day!",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "crime.embed.failed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "crime.embed.failed",
+      "message": "${tempVars(\"crime.message.failed.complete\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "crime.embed.failed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"crime.money.negative\")",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Positive",
+      "color": "#00ff80",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "crime.money.positive",
+      "min": "212",
+      "max": "841",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "crime.randomized.message.won",
+      "min": "0",
+      "max": "7",
+      "name": "Generate Random Number"
+    },
+    {
+      "filename": "C:\\Users\\linds\\Desktop\\New_!\\Auto_Responses\\work_responses.json",
+      "storage": "1",
+      "varName2": "read_file_json",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "read_file_json",
+      "path": "['Crime Positive Randomized Messages'][${tempVars(\"crime.randomized.message.won\")}]",
+      "storage": "1",
+      "varName": "message",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "text": "${tempVars(\"message\")}",
+      "text2": "generated.money.positive",
+      "text3": "💲${tempVars(\"crime.money.positive\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "randomized_message_positive.crime",
+      "name": "Replace Text"
+    },
+    {
+      "title": "You were a criminal all day!",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "work.embed.1",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "message": "${tempVars(\"randomized_message_positive.crime\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"crime.money.positive\")",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0",
+  "_timeRestriction": 3600
+}
