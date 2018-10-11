@@ -1,0 +1,173 @@
+{
+  "name": "Rob",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "kgCoB",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "fail/win",
+      "min": "1",
+      "max": "3",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "fail/win",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "2",
+      "iffalseVal": "17",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "stored_member",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "cash.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "mentioned.users.cash",
+      "name": "Store Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"mentioned.users.cash\")}",
+      "info": "3",
+      "SecondNumber": "7",
+      "storage": "1",
+      "varName": "stolen.money.divided",
+      "name": "Basic Math Operation"
+    },
+    {
+      "math": "${tempVars(\"stolen.money.divided\")}",
+      "info": "0",
+      "storage": "1",
+      "varName": "rounded.number",
+      "name": "Math Operation"
+    },
+    {
+      "FirstNumber": "${tempVars(\"mentioned.users.cash\")}",
+      "info": "1",
+      "SecondNumber": "${tempVars(\"rounded.number\")}",
+      "storage": "1",
+      "varName": "new.value.for.mentenioned",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"rounded.number\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "0",
+      "value": "tempVars(\"new.value.for.mentenioned\")",
+      "name": "Control Member Data"
+    },
+    {
+      "title": "Robbery!",
+      "author": "",
+      "color": "GREEN",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "rob.worked.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "rob.worked.embed",
+      "message": "Oh my gosh! ${member} just robbed ${mentionedUser} of 💲 ${tempVars(\"rounded.number\")}. Someone call the police!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "rob.worked.embed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "comment": "Loss Robbery",
+      "color": "#80ff00",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "failed.money",
+      "min": "-841",
+      "max": "-2415",
+      "name": "Generate Random Number"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"failed.money\")",
+      "name": "Control Member Data"
+    },
+    {
+      "title": "Robbery!",
+      "author": "",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "failed.robbery.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "failed.robbery.embed",
+      "message": "${member} Failed to rob ${mentionedUser}, someone call the police!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "failed.robbery.embed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    }
+  ]
+}
