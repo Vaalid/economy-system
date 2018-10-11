@@ -1,0 +1,182 @@
+{
+  "name": "Money",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "iueqA",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "bank_lookup_name",
+      "name": "Store Command Params"
+    },
+    {
+      "call": "14",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "cash",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "bank.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Bank",
+      "name": "Store Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"cash\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"Bank\")}",
+      "storage": "1",
+      "varName": "networth.value",
+      "name": "Basic Math Operation"
+    },
+    {
+      "title": "Bank Balance",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Money_Balance",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance",
+      "fieldName": "Cash:",
+      "message": "💲 ${tempVars(\"cash\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance",
+      "fieldName": "Bank:",
+      "message": "💲 ${tempVars(\"Bank\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance",
+      "fieldName": "Networth:",
+      "message": "💲 ${tempVars(\"networth.value\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "cash.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "cash_mentioned",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "bank.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Bank_mentioned",
+      "name": "Store Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"cash_mentioned\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"Bank_mentioned\")}",
+      "storage": "1",
+      "varName": "networth.value.mentioned",
+      "name": "Basic Math Operation"
+    },
+    {
+      "title": "Bank Balance",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Money_Balance_Mentioned",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance_Mentioned",
+      "fieldName": "Cash:",
+      "message": "💲 ${tempVars(\"cash_mentioned\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance_Mentioned",
+      "fieldName": "Bank:",
+      "message": "💲 ${tempVars(\"Bank_mentioned\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance_Mentioned",
+      "fieldName": "Networth:",
+      "message": "💲 ${tempVars(\"networth.value.mentioned\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Money_Balance_Mentioned",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    }
+  ],
+  "_aliases": [
+    "Bal"
+  ]
+}
