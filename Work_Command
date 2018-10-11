@@ -1,0 +1,93 @@
+{
+  "name": "Work",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "tvQPt",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "generated.money",
+      "min": "54",
+      "max": "540",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "generated.randomized.message",
+      "min": "0",
+      "max": "6",
+      "name": "Generate Random Number"
+    },
+    {
+      "filename": "C:\\Users\\linds\\Desktop\\New_!\\Auto_Responses\\work_responses.json",
+      "storage": "1",
+      "varName2": "read_file_json",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "read_file_json",
+      "path": "['Work Randomize Messages'][${tempVars(\"generated.randomized.message\")}]",
+      "storage": "1",
+      "varName": "message",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "text": "${tempVars(\"message\")}",
+      "text2": "generated.money",
+      "text3": "💲${tempVars(\"generated.money\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "randomized_message",
+      "name": "Replace Text"
+    },
+    {
+      "title": "You worked all day!",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "work.embed.1",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "message": "${tempVars(\"randomized_message\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "message": "3 Hour Cool Down!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"generated.money\")",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0",
+  "_timeRestriction": 600
+}
