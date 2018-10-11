@@ -1,0 +1,193 @@
+{
+  "name": "Slut",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "DIJnq",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "positive.negative",
+      "min": "1",
+      "max": "2",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "positive.negative",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "2",
+      "iftrueVal": "15",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Negative",
+      "color": "#00ff80",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "generated.money.negative",
+      "min": "-243",
+      "max": "-1342",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "generated.randomized.message.failed",
+      "min": "0",
+      "max": "9",
+      "name": "Generate Random Number"
+    },
+    {
+      "filename": "C:\\Users\\linds\\Desktop\\New_!\\Auto_Responses\\work_responses.json",
+      "storage": "1",
+      "varName2": "read_file_json",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "read_file_json",
+      "path": "['Slut Failed Randomized Messages'][${tempVars(\"generated.randomized.message.failed\")}]",
+      "storage": "1",
+      "varName": "message",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "text": "${tempVars(\"message\")}",
+      "text2": "generated.money.negative",
+      "text3": "💲${tempVars(\"generated.money.negative\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "slut.message.failed.complete",
+      "name": "Replace Text"
+    },
+    {
+      "title": "You Slutted all day!",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "slut.embed.failed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "slut.embed.failed",
+      "message": "${tempVars(\"slut.message.failed.complete\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "slut.embed.failed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"generated.money.negative\")",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Positive",
+      "color": "#00ff80",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "slut.money.positive",
+      "min": "212",
+      "max": "841",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "generated.randomized.message",
+      "min": "0",
+      "max": "2",
+      "name": "Generate Random Number"
+    },
+    {
+      "filename": "C:\\Users\\linds\\Desktop\\New_!\\Auto_Responses\\work_responses.json",
+      "storage": "1",
+      "varName2": "read_file_json",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "read_file_json",
+      "path": "['Slut Positive Randomized Messages'][${tempVars(\"generated.randomized.message\")}]",
+      "storage": "1",
+      "varName": "message",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "text": "${tempVars(\"message\")}",
+      "text2": "generated.money.passed",
+      "text3": "💲${tempVars(\"slut.money.positive\")}",
+      "info": "1",
+      "storage": "1",
+      "varName": "randomized_message",
+      "name": "Replace Text"
+    },
+    {
+      "title": "You slutted all day!",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "work.embed.1",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "message": "${tempVars(\"randomized_message\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "work.embed.1",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "1",
+      "value": "tempVars(\"generated.money\")",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0",
+  "_timeRestriction": 600
+}
