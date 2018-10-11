@@ -1,0 +1,188 @@
+{
+  "name": "Deposit",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "gnTqu",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "21",
+      "iffalse": "2",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "ammount.deposited",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "comparison": "1",
+      "value": "tempVars(\"ammount.deposited\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "21",
+      "name": "Check Member Data"
+    },
+    {
+      "call": "6",
+      "name": "Jump to Action"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "cash",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "bank.system",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "bank",
+      "name": "Store Member Data"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"ammount.deposited\")}",
+      "storage": "1",
+      "varName2": "deposited.amount",
+      "name": "Convert a Variable"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"cash\")}",
+      "storage": "1",
+      "varName2": "cash.converted",
+      "name": "Convert a Variable"
+    },
+    {
+      "into": "0",
+      "vAria": "${tempVars(\"bank\")}",
+      "storage": "1",
+      "varName2": "bank.converted",
+      "name": "Convert a Variable"
+    },
+    {
+      "FirstNumber": "${tempVars(\"deposited.amount\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"bank.converted\")}",
+      "storage": "1",
+      "varName": "Deposited_money",
+      "name": "Basic Math Operation"
+    },
+    {
+      "FirstNumber": "${tempVars(\"cash.converted\")}",
+      "info": "1",
+      "SecondNumber": "${tempVars(\"deposited.amount\")}",
+      "storage": "1",
+      "varName": "New.cash.value",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "bank.system",
+      "changeType": "0",
+      "value": "tempVars(\"Deposited_money\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "cash.system",
+      "changeType": "0",
+      "value": "tempVars(\"New.cash.value\")",
+      "name": "Control Member Data"
+    },
+    {
+      "title": "${member}",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "depost.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "depost.embed",
+      "message": "✅ Deposited ${tempVars(\"ammount.deposited\")} to your bank!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "depost.embed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Error",
+      "color": "#80ff80",
+      "name": "Comment"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "ERROR",
+      "author": "",
+      "color": "5dfcba",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "error.message",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "error.message",
+      "message": "Please insert a valid amount to deposit! ",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "error.message",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "_aliases": [
+    "Dep"
+  ]
+}
