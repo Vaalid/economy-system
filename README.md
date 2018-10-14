@@ -1,3 +1,5 @@
+okokok, i need to say that GamingFlaming is the main reason this command even works in the first place, so please go give him a huge round of a plause. He taught me how to do the read file, parse from json, and replace text. So yeah, if you need ANY support be sure to send him a message!
+
 Okay so this is the tutorial on how to set this all up once you have ALL of the commands put into DBM
 
 First,
